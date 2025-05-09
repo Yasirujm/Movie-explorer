@@ -30,6 +30,9 @@ const MovieDetails = () => {
     .slice(0, 3)
     .join(', ') || 'N/A';
 
+  // Format the rating to 1 decimal place
+  const formattedRating = movie.vote_average ? movie.vote_average.toFixed(1) : 'N/A';
+
   return (
     <div className="movie-details-container">
       <div className="poster">
@@ -41,7 +44,7 @@ const MovieDetails = () => {
       <div className="info">
         <h1>{movie.title}</h1>
         <p className="overview">{movie.overview}</p>
-        <p><strong>Rating:</strong> {movie.vote_average}</p>
+        <p><strong>Rating:</strong> {formattedRating}</p>
         <p><strong>Runtime:</strong> {movie.runtime} minutes</p>
         <p><strong>Release Date:</strong> {movie.release_date}</p>
         <p><strong>Genres:</strong> {movie.genres.map(g => g.name).join(', ')}</p>
