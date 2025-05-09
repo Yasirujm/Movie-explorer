@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import './MovieDetails.css';
 
 const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
@@ -73,7 +74,8 @@ const MovieDetails = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            🎬 Watch Trailer
+            <PlayArrowIcon fontSize="small" />
+            Watch Trailer
           </a>
         ) : (
           <p>No trailer available</p>
