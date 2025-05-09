@@ -1,0 +1,25 @@
+.scrolling-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  transition: none;
+}
+
+.scrolling-text.animate {
+  animation: scroll-title 7s linear infinite;
+}
+
+@keyframes scroll-title {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

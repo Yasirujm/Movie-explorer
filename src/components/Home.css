@@ -1,0 +1,242 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333333;
+}
+
+.home-container {
+  padding: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #333333;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar input::placeholder {
+  color: #999999;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.trending-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: inherit;
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #555555;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  justify-items: center;
+}
+
+.movie-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.movie-card {
+  width: 220px;
+  height: 380px; 
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.movie-info {
+  padding: 10px;
+  text-align: center;
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie-info h3 {
+  font-size: 16px;
+  margin: 4px 0;
+  color: #222222;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+.movie-info .scrolling-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.movie-info .scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 0;
+  transform: translateX(0%);
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+@keyframes scroll-title {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.movie-info p {
+  font-size: 14px;
+  color: #666666;
+  margin: 4px 0;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin: 1em 0;
+  font-weight: bold;
+}
+
+.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 84%;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 10;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.suggestions-dropdown li {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: #222;
+  background-color: #fff;
+}
+
+.suggestions-dropdown li:hover {
+  background-color: #f0f0f0;
+}
+
+.suggestions-dropdown img {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+body.dark-mode .suggestions-dropdown {
+  background-color: #1f1f1f;
+  border-color: #444;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .suggestions-dropdown li {
+  color: #eee;
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .suggestions-dropdown li:hover {
+  background-color: #333;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 15px;
+  font-size: 18px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-to-top:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
