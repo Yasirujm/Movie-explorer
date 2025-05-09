@@ -24,3 +24,15 @@ Before you begin, make sure you have the following installed on your local machi
 
 - [Node.js](https://nodejs.org/)
 - [npm](https://npmjs.com/)
+
+## installation
+
+To get started with **Movie Explorer**, follow the steps below to set up the project on your local machine.
+
+### 1. Clone the repository
+### 2. Navigate into the project directory
+### 3. Install dependencies
+- npm install
+- npm install @mui/material@7.1.0 @mui/icons-material@7.1.0
+### 4. Set up environment variables
+
